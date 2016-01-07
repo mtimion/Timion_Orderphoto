@@ -1,0 +1,11 @@
+<?php
+$_helper = Mage::helper('timion_orderphoto');
+$_order = $this->getOrder();
+$_orderId = $_order->getId();
+?>
+
+<?php if ($_helper->photoExists($_orderId)) : ?>
+	<img src="<?php echo $_helper->getOrderPhotoUrl($_orderId); ?>" />
+<?php else: ?>
+	Photo not yet taken.
+<?php endif; ?>
